@@ -1,0 +1,165 @@
+/*You should refactor your code. This one is not refactored that much. But remove stuff, make things simple, less line of code the better.*/
+/*There is hierarchy between different types of selectors. "IDs" are the most specific then "Classes" then "HTML elements". And, "inline-CSS" is more specific then "internal-CSS" then "external-CSS".*/
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h1{
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 2;
+  margin-bottom: 3%;
+}
+
+/* h2, h3,... etc are better given individual classes. Instead of styling the tag itself. Because if we want to change something related to a particular header tag at a particular location in the future, it can be pin-pointed quickly and edited without affecting the header tag at a different place. But don't repeat yourself (DRY) too much but also don't mush everything into a single class. There is a sweet spot.*/
+h3{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+p{
+  color: #8f8f8f;
+}
+
+/**************************** Class Selectors ****************************/
+.card-column{
+  padding: 3% 2%;
+}
+
+.carousel-item{
+  padding: 7% 15% 3% 15%;
+}
+
+/*Angela is like container-fluid (or container for that matter) is something that should be reused.*/
+.container-fluid{
+  padding: 7% 15%;
+
+  /* padding: 3% 15% 7%; */
+}
+
+.cta-h3{
+  padding: 7%;
+  font-size: 2.5rem;
+}
+
+.download-button{
+  margin: 0 3% 8% 0;
+}
+
+.features-inner-padding{
+  padding: 5% 5%;
+}
+
+.iphone_image{
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;   /*Positioning in the case of "absolute" will be relative to the closest positioned ancestor.*/
+  right: 30%;
+}
+
+.iphone_image_div{
+  position: relative;  /*Needed because if not the iphone_image width will be relative to the body as there will not be any closest positioned ancestor.*/
+}
+
+.navbar{
+  padding-bottom: 4.5rem;
+}
+
+.navbar-brand{
+  font-family: "Ubuntu";
+  font-size: 3rem;
+}
+
+.nav-link{
+  font-size: 1.5rem;
+  margin: 0 30px;
+}
+
+.press_icons{
+  margin: 2% 2%;
+  width: 20%;
+}
+
+.pricing-h2{
+  margin-bottom: 2%;
+}
+
+.social-icons{
+  margin: 3% 1%;
+}
+
+.symbol{
+  margin-bottom: 3rem;
+  color: #ef8172;
+}
+
+.symbol:hover{
+  color: #ff4c68;
+}
+
+.testimonial-image{
+  border-radius: 100%;
+  width: 10%;
+  margin: 2%;
+}
+
+/************************* ID selectors ******************************/
+#cta{
+  background-color: #ff4c68;
+  color: white;
+  padding: 5% 15%;
+}
+
+#features{
+  padding: 5% 15%;
+  background-color: white;
+  position: relative;
+}
+
+#press{
+  background-color: #ef8172;
+  padding: 3% 15% 5% 15%;
+}
+
+#pricing{
+  padding: 5% 15%;
+}
+
+#testimonials{
+  background-color: #ef8172;
+  color: #fff;
+}
+
+#title{
+  background-color: #ff4c68;
+  color: white;
+  text-align: left;
+}
+
+/*Angela is like container-fluid (or container for that matter) is something that should be reused.*/
+#title .container-fluid{
+  padding: 3% 15% 7%;
+}
+
+/*************************** Media Query Breakpoints ***********************/
+
+/*To make something do in between 2 conditions use like @media (min-width: 900px) and (max-width: 1110px).*/
+@media (max-width: 1110px){
+  #title{
+    text-align: center;
+  }
+  .iphone_image{
+    position: static;  /*Positioning in the case of "absolute" will be relative to the closest positioned ancestor.*/
+    transform: rotate(0deg);
+  }
+}
